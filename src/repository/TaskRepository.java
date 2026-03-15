@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TaskRepository {
-    public Task save(Task task);
+    Task save(Task task);
 
     Optional<Task> findById(int id);
 
