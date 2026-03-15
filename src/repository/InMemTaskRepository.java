@@ -2,34 +2,29 @@ package repository;
 
 import model.Task;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class InMemTaskRepository implements TaskRepository {
-    private List<Task> tasks;
-    public InMemTaskRepository() {
-        tasks = new  ArrayList<>();
-    }
+    private final Map<Integer, Task> storage = new HashMap<>();
 
     @Override
     public Task save(Task task) {
-        tasks.add(task);
+        storage.put(task.getId(), task);
         return task;
     }
 
     @Override
-    public Optional<Task> findById(String id) {
-        return Optional.empty();
+    public Optional<Task> findById(int id) {
+        return Optional.ofNullable(storage.get(id));
     }
 
     @Override
     public List<Task> findAll() {
-        return List.of();
+        return new ArrayList<>(storage.values());
     }
 
     @Override
     public boolean deleteById(int id) {
-        return false;
+        return storage.remove(id) != null;
     }
 }

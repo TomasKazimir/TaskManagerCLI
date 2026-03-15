@@ -29,4 +29,9 @@ public class Task {
     public void markCompleted() {
         this.completed = true;
     }
+
+    @Override
+    public String toString() {
+        return "Task %d - %s: %s".formatted(id, completed ? "[x]" : "[ ]", description);
+    }
 }
