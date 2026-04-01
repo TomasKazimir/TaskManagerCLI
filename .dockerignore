@@ -1,0 +1,8 @@
+
+*.class
+build/
+.git/
+.idea/
+*.log
+*.jar
+
