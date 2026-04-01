@@ -18,9 +18,6 @@ public class TaskService {
     }
 
     public Task createTask(String description) {
-        if (description == null) {
-
-        }
         int id = idGenerator.getAndIncrement();
         Task task = new Task(id, description);
         return repository.save(task);
