@@ -1,3 +1,4 @@
+
 import cli.CommandDispatcher;
 import cli.CommandParser;
 import cli.ParsedCommand;
@@ -34,7 +35,7 @@ public class TaskManagerApp {
     }
 
     static void printHelp(CommandDispatcher dispatcher) {
-        System.out.println("TaskManagerApp");
+        System.out.println("main.TaskManagerApp");
         System.out.println("Available commands:");
         for (Command command : dispatcher.getCommands()) {
             System.out.println(command.name());
